@@ -1,19 +1,19 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f9f9f9;
+    background: #f9f9f9c0;
     margin: 0;
     padding: 20px;
 }
 
 h1 {
-    color: #333;
+    color: #333333;
     text-align: center;
 }
 
 table {
     width: 60%;
     margin: 30px auto;
-    border-collapse: collapse;
+    border-collapse: collapse; 
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
@@ -41,7 +41,7 @@ button#submitBtn {
     cursor: pointer;
     transition: background 0.2s;
 }
-
-button#submitBtn:hover {
-    background: #005fa3;
+body{
+    background-color: rgb(235, 226, 226);
+    color: #000000;
 }
