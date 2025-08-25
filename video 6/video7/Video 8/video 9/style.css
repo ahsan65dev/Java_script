@@ -1,0 +1,9 @@
+.red{
+    color: rgb(100, 29, 29);
+}
+.bg-yellow{
+    background-color: rgb(175, 175, 140);
+}
+.bg-yellow:hover{
+    background-color: rgb(64, 64, 37);
+}
