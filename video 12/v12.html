@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Three-Column Media Gallery</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --bg: #f7f7f8;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(2, 6, 23, 0.08);
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      padding: 32px 16px 8px;
+      text-align: center;
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(1.4rem, 2.5vw, 2rem); }
+    p.sub { margin: 0; color: var(--muted); }
+
+    .container { max-width: 1200px; margin: 24px auto 56px; padding: 0 16px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .card h2 { margin: 4px 0 12px; font-size: 1.125rem; }
+
+    .media { width: 100%; display: block; border-radius: 12px; }
+    .stack > * + * { margin-top: 14px; }
+    figure { margin: 0; }
+    figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 6px; }
+
+    audio, video { width: 100%; }
+
+    /* simple focus states for accessibility */
+    a, button, li { outline-color: #6366f1; }
+
+    /* Tiny badges for file type */
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Media Gallery</h1>
+    <p class="sub">A responsive 3-column layout with audio, video, and images</p>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <!-- Column 1: Audio -->
+      <article class="card">
+        <h2>Audio <span class="badge">MP3</span></h2>
+        <div class="stack">
+          <figure>
+            <audio controls preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" aria-label="Audio track 1"></audio>
+            <figcaption>SoundHelix Song 1</figcaption>
+          </figure>
+          <figure>
+            <audio controls preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" aria-label="Audio track 2"></audio>
+            <figcaption>SoundHelix Song 2</figcaption>
+          </figure>
+          <figure>
+            <audio controls preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" aria-label="Audio track 3"></audio>
+            <figcaption>SoundHelix Song 3</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- Column 2: Video -->
+      <article class="card">
+        <h2>Video <span class="badge">MP4 / WEBM</span></h2>
+        <div class="stack">
+          <figure>
+            <video class="media" controls preload="metadata" poster="https://images.unsplash.com/photo-1517816428104-797678c7cf0d?q=80&w=1200&auto=format&fit=crop">
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Sample Video: Big Buck Bunny / Flower (fallback)</figcaption>
+          </figure>
+          <figure>
+            <video class="media" controls preload="metadata" poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Sample Video: Flower / Big Buck Bunny (fallback)</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- Column 3: Images -->
+      <article class="card">
+        <h2>Images <span class="badge">JPG</span></h2>
+        <div class="stack">
+          <figure>
+            <img class="media" src="https://picsum.photos/id/1025/800/500" alt="Close-up portrait of a dog" loading="lazy" />
+            <figcaption>Portrait</figcaption>
+          </figure>
+          <figure>
+            <img class="media" src="https://picsum.photos/id/1018/800/500" alt="Mountain road with trees" loading="lazy" />
+            <figcaption>Scenic Road</figcaption>
+          </figure>
+          <figure>
+            <img class="media" src="https://picsum.photos/id/1040/800/500" alt="Calm lake at sunset" loading="lazy" />
+            <figcaption>Sunset Lake</figcaption>
+          </figure>
+          <figure>
+            <img class="media" src="https://picsum.photos/id/1003/800/500" alt="City skyline with river" loading="lazy" />
+            <figcaption>City Skyline</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
