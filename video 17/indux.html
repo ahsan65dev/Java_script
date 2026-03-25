@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /* Element selectors*/
+        div {
+            /*  background-color: lightblue;*/
+        }
+
+        /*class selectors*/
+
+        .lightblue {
+            background-color: lightblue;
+        }
+
+        /* ID selectors*/
+        #yellow {
+            background-color: yellow;
+        }
+
+        /* Child selectors*/
+
+        div p {
+            color: rgb(229, 227, 227);
+            background-color: rgb(16, 174, 58);
+        }
+
+        /* Descendant selectors*/
+        .lightblue p {
+            color: rgb(229, 227, 227);
+            background-color: rgb(16, 174, 58);
+        }
+
+        /* Universal selector*/
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* pseudo-class selector*/
+
+        a:visited {
+            color: red;
+        }
+
+        a:hover {
+            color: rgb(124, 26, 73);
+        }
+
+        a:active {
+            color: rgb(53, 9, 142);
+        }
+
+        a:link {
+            color: rgb(9, 142, 53);
+        }
+
+        a:active {
+            background-color: rgb(142, 9, 53);
+        }
+
+        a:hover {
+            background-color: rgb(209, 81, 123);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="lightblue">
+        I am Sheraz. I am a web developer. I love to learn new things and share my knowledge with others. I am
+        passionate about coding and always eager to explore new technologies. I believe in continuous learning and
+        growth in the field of web development.
+    </div>
+
+    <div id="yellow">
+        Hello, I am Sheraz. I am a web developer. I love to learn new things and share my knowledge with others. I am
+        passionate about coding and always eager to explore new technologies. I believe in continuous learning and
+        growth in the field of web development.
+        <p>
+            I am Sheraz. I am a web developer. I love to learn new things and share my knowledge with others. I am
+            passionate about coding and always eager to explore new technologies.
+        </p>
+    </div>
+
+    <a href="https://www.google.com">Visit Google</a>
+    <a href="https://www.facebook 2.com">Visit Facebook</a>
+
+</body>
+
+</html>
